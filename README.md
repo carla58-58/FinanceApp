@@ -23,8 +23,8 @@ Built with **ASP.NET Core** and **SQL Server**, the app is ideal for individuals
 - **ASP.NET Core** – Robust framework for building scalable web applications
 - **C#** – Main programming language for backend logic
 - **SQL Server** – Relational database for secure, reliable data storage
-- **Entity Framework Core** – ORM for database access and migrations
 - **Bootstrap** – Responsive front-end framework for user-friendly UI
+- **Chart.js** – JavaScript library for creating interactive and visually appealing charts and graphs in the browser, ideal for displaying expense analytics and trends
 
 ---
 
