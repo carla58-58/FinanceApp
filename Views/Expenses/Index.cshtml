@@ -1,6 +1,10 @@
 @model IEnumerable<FinanceApp.Models.Expense>
 
-<h2>My Expenses</h2>
+<h2 class="text-center pt-3 pb-3">My Expenses</h2>
+
+<div class="d-flex justify-content-center mb-3">
+    <button class="btn btn-primary" onclick="window.location.href='/Expenses/Create'">Create New Expense</button>
+</div>
 
 <div class="container">
     <table class="table table-bordered">
@@ -10,6 +14,7 @@
                 <th>Amount</th>
                 <th>Category</th>
                 <th>Date</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,15 +25,20 @@
                     <td>@item.Amount $</td>
                     <td>@item.Category</td>
                     <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
 
-<h2>Expenses Overview</h2>
-<div>
-    <canvas style="max-width: 450px; max-height:450px;" id="myChart"></canvas>
+<h2 class="text-center pt-3 pb-3">Expenses Overview</h2>
+<div class="d-flex justify-content-center">
+    <canvas style="max-width: 400px; max-height:400px;" id="myChart"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -48,6 +58,17 @@
                       data: data.map(d => d.total),
                     }]
                   },
+                  options: {
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    usePointStyle: true,
+                                    pointStyle: 'circle'
+                                }
+                            }
+                        }
+                    }
 
             });
 
@@ -55,3 +76,5 @@
 
     
 </script>
+
+<h3 class="text-center pt-3 pb-3">Total Expenses: @ViewBag.TotalExpenses $</h3>

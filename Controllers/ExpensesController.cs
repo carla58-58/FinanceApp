@@ -16,6 +16,9 @@ namespace FinanceApp.Controllers
         public async Task<IActionResult> Index()
         {
             var expenses = await _expensesService.GetAll();
+
+            ViewBag.TotalExpenses = await _expensesService.GetTotalExpenses();
+
             return View(expenses);
         }
         public IActionResult Create()
@@ -34,6 +37,14 @@ namespace FinanceApp.Controllers
 
             return View(expense);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _expensesService.Delete(id);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult GetChart()
         {
             var data = _expensesService.GetChartData();
