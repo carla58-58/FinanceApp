@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj": {}
+    "c:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj": {
+    "c:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj",
+        "projectUniqueName": "c:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj",
         "projectName": "FinanceApp",
-        "projectPath": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj",
+        "projectPath": "c:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj",
         "packagesPath": "C:\\Users\\carla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\obj\\",
+        "outputPath": "c:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\carla\\AppData\\Roaming\\NuGet\\NuGet.Config"
