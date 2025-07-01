@@ -4685,11 +4685,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj",
+      "projectUniqueName": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp.csproj",
       "projectName": "FinanceApp",
-      "projectPath": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\FinanceApp.csproj",
+      "projectPath": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp.csproj",
       "packagesPath": "C:\\Users\\carla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\FinanceApp\\obj\\",
+      "outputPath": "C:\\Users\\carla\\Documents\\Portfolio software developer\\FinanceApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\carla\\AppData\\Roaming\\NuGet\\NuGet.Config"
