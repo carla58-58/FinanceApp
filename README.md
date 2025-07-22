@@ -14,7 +14,7 @@
 Welcome to the **ASP.NET Expenses Tracker App**!  
 This web application helps users efficiently manage and monitor their personal or business expenses, offering a clear overview of spending patterns and budget tracking.
 
-Built with **ASP.NET Core** and **SQL Server**, the app is ideal for individuals and small teams who want a secure, modern, and easy-to-use expense management solution.
+Built with **ASP.NET Core** and **SQLite**, the app is ideal for individuals and small teams who want a secure, modern, and easy-to-use expense management solution.
 
 ---
 
