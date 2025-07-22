@@ -22,7 +22,7 @@ Built with **ASP.NET Core** and **SQL Server**, the app is ideal for individuals
 
 - **ASP.NET Core** – Robust framework for building scalable web applications
 - **C#** – Main programming language for backend logic
-- **SQL Server** – Relational database for secure, reliable data storage
+- **SQLite** – Lightweight, file-based database for reliable data storage
 - **Bootstrap** – Responsive front-end framework for user-friendly UI
 - **Chart.js** – JavaScript library for creating interactive and visually appealing charts and graphs in the browser, ideal for displaying expense analytics and trends
 
@@ -48,7 +48,6 @@ Follow these steps to run the Expenses Tracker App locally:
 ### Prerequisites
 
 - [.NET SDK 7.0 or later](https://dotnet.microsoft.com/)
-- [SQL Server Express](https://www.microsoft.com/en-au/sql-server/sql-server-downloads) (or a local/remote SQL Server instance)
 - [Git](https://git-scm.com/)
 
 ### Installation
@@ -59,26 +58,33 @@ cd expenses-tracker-app
 
 text
 
-2. **Configure the Database:**
-- Update the `appsettings.json` file with your SQL Server connection string:
-  ```
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=YOUR_SERVER;Database=ExpensesTrackerDb;Trusted_Connection=True;"
-  }
-  ```
-
-3. **Apply Database Migrations:**
+2. **Apply Database Migrations:**
 dotnet ef database update
 
 text
 
-4. **Run the Application:**
+3. **Run the Application:**
 dotnet run
 
 text
 
-5. **Access the App:**
-- Open [http://localhost:5123](http://localhost:5123) in your browser.
+4. **Access the App:**
+- Open [http://localhost:5123/Expenses](http://localhost:5123/Expenses) in your browser.
+
+## 🚀 Deployment
+
+This app is configured for free deployment on **Render.com**:
+
+1. **Push your code to GitHub**
+2. **Connect your GitHub repo to Render**
+3. **Render will automatically deploy using the included `render.yaml` configuration**
+4. **Your app will be live with a free SQLite database!**
+
+The app includes:
+- ✅ **Dockerfile** for containerized deployment
+- ✅ **render.yaml** for automatic Render deployment
+- ✅ **SQLite database** (no additional database costs)
+- ✅ **Production configuration** ready
 
 ---
 

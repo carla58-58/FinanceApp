@@ -1,16 +1,23 @@
 using FinanceApp.Data;
 using Microsoft.EntityFrameworkCore;
 using FinanceApp.Data.Service;
- 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<FinanceAppContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 builder.Services.AddScoped<IExpensesService, ExpensesService>();
 var app = builder.Build();
+
+// Ensure database is created and migrated
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<FinanceAppContext>();
+    context.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
