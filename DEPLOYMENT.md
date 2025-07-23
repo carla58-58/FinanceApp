@@ -25,10 +25,18 @@ git push origin main
 ## What's Included
 
 ✅ **Dockerfile** - For containerized deployment  
-✅ **render.yaml** - Automatic Render configuration  
-✅ **SQLite Database** - No additional database costs  
+✅ **render.yaml** - Automatic Render configuration with persistent storage  
+✅ **SQLite Database** - Stored on persistent disk (data survives deployments)  
 ✅ **Production Settings** - Ready for deployment  
 ✅ **Database Migrations** - Automatic database setup  
+
+## Data Persistence
+
+🎯 **Important**: Your database is now configured with **persistent storage**:
+- Database file: `/app/data/financeApp.db`
+- Mounted on: **Render persistent disk**
+- **Data survives**: Deployments, restarts, and updates
+- **Backup**: Render handles disk backups automatically  
 
 ## Alternative Free Hosting
 

@@ -16,7 +16,15 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<FinanceAppContext>();
-    context.Database.EnsureCreated();
+    try
+    {
+        context.Database.Migrate();
+    }
+    catch
+    {
+        // Fallback to EnsureCreated if migrations fail
+        context.Database.EnsureCreated();
+    }
 }
 
 // Configure the HTTP request pipeline.
