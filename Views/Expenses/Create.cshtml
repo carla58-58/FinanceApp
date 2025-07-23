@@ -1,19 +1,114 @@
 @model FinanceApp.Models.Expense
-<div class="container">
-    <h2>Add Expense</h2>
-    <form asp-action="Create" method="post">
-        <div>
-            <label asp-for="Description" class="form-label"></label>
-            <input asp-for="Description" class="form-control"/>
+
+@{
+    ViewData["Title"] = "Add New Expense";
+}
+
+<div class="container py-5" style="max-width: 600px;">
+    <div class="text-center mb-5">
+        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #007bff, #0056b3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 10px 30px rgba(0,123,255,0.3);">
+            <i class="fas fa-plus fa-3x" style="color: white;"></i>
         </div>
-        <div>
-            <label asp-for="Amount" class="form-label"></label>
-            <input asp-for="Amount" class="form-control"/>
-        </div>
-        <div>
-            <label asp-for="Category" class="form-label"></label>
-            <input asp-for="Category" class="form-control"/>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Expense</button>
-    </form>
+        <h1 style="color: #2c3e50; font-weight: 700; font-size: 2.5rem; margin-bottom: 0.5rem;">Add New Expense</h1>
+        <p style="color: #6c757d; font-size: 1.2rem;">Track your spending with ease</p>
+    </div>
+
+    <div style="background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 3rem 2.5rem;">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert" style="border-radius: 15px;"></div>
+            
+            <!-- Description Field -->
+            <div style="margin-bottom: 2rem;">
+                <label asp-for="Description" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    <i class="fas fa-edit" style="color: #007bff; margin-right: 8px;"></i>Description
+                </label>
+                <input asp-for="Description" 
+                       style="width: 100%; padding: 1.2rem 1.5rem; font-size: 1.1rem; border: 3px solid #e9ecef; border-radius: 15px; transition: all 0.3s ease; background: #f8f9fa;"
+                       placeholder="What did you spend money on?"
+                       onfocus="this.style.borderColor='#007bff'; this.style.boxShadow='0 0 0 0.2rem rgba(0,123,255,0.25)'; this.style.transform='translateY(-2px)';"
+                       onblur="this.style.borderColor='#e9ecef'; this.style.boxShadow='none'; this.style.transform='translateY(0)';" />
+                <span asp-validation-for="Description" class="text-danger" style="font-size: 0.9rem;"></span>
+            </div>
+            
+            <!-- Amount Field -->
+            <div style="margin-bottom: 2rem;">
+                <label asp-for="Amount" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    <i class="fas fa-dollar-sign" style="color: #28a745; margin-right: 8px;"></i>Amount
+                </label>
+                <div style="position: relative;">
+                    <span style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); font-weight: 700; color: #495057; font-size: 1.2rem; z-index: 2;">$</span>
+                    <input asp-for="Amount" type="number" step="0.01" min="0.01" 
+                           style="width: 100%; padding: 1.2rem 1.5rem 1.2rem 3rem; font-size: 1.1rem; border: 3px solid #e9ecef; border-radius: 15px; transition: all 0.3s ease; background: #f8f9fa;"
+                           placeholder="0.00"
+                           onfocus="this.style.borderColor='#007bff'; this.style.boxShadow='0 0 0 0.2rem rgba(0,123,255,0.25)'; this.style.transform='translateY(-2px)';"
+                           onblur="this.style.borderColor='#e9ecef'; this.style.boxShadow='none'; this.style.transform='translateY(0)';" />
+                </div>
+                <span asp-validation-for="Amount" class="text-danger" style="font-size: 0.9rem;"></span>
+            </div>
+            
+            <!-- Category Field -->
+            <div style="margin-bottom: 2rem;">
+                <label asp-for="Category" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    <i class="fas fa-tags" style="color: #17a2b8; margin-right: 8px;"></i>Category
+                </label>
+                <select asp-for="Category" 
+                        style="width: 100%; padding: 1.2rem 1.5rem; font-size: 1.1rem; border: 3px solid #e9ecef; border-radius: 15px; transition: all 0.3s ease; background: #f8f9fa;"
+                        onfocus="this.style.borderColor='#007bff'; this.style.boxShadow='0 0 0 0.2rem rgba(0,123,255,0.25)'; this.style.transform='translateY(-2px)';"
+                        onblur="this.style.borderColor='#e9ecef'; this.style.boxShadow='none'; this.style.transform='translateY(0)';">
+                    <option value="">Choose a category...</option>
+                    <option value="Food & Dining">🍽️ Food & Dining</option>
+                    <option value="Transportation">🚗 Transportation</option>
+                    <option value="Shopping">🛍️ Shopping</option>
+                    <option value="Entertainment">🎬 Entertainment</option>
+                    <option value="Bills & Utilities">⚡ Bills & Utilities</option>
+                    <option value="Healthcare">🏥 Healthcare</option>
+                    <option value="Education">📚 Education</option>
+                    <option value="Travel">✈️ Travel</option>
+                    <option value="Other">📦 Other</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger" style="font-size: 0.9rem;"></span>
+            </div>
+            
+            <!-- Date Field -->
+            <div style="margin-bottom: 3rem;">
+                <label asp-for="Date" style="display: block; font-weight: 600; color: #2c3e50; margin-bottom: 0.75rem; font-size: 1.1rem;">
+                    <i class="fas fa-calendar" style="color: #ffc107; margin-right: 8px;"></i>Date
+                </label>
+                <input asp-for="Date" type="date" 
+                       style="width: 100%; padding: 1.2rem 1.5rem; font-size: 1.1rem; border: 3px solid #e9ecef; border-radius: 15px; transition: all 0.3s ease; background: #f8f9fa;"
+                       value="@DateTime.Now.ToString("yyyy-MM-dd")"
+                       onfocus="this.style.borderColor='#007bff'; this.style.boxShadow='0 0 0 0.2rem rgba(0,123,255,0.25)'; this.style.transform='translateY(-2px)';"
+                       onblur="this.style.borderColor='#e9ecef'; this.style.boxShadow='none'; this.style.transform='translateY(0)';" />
+                <span asp-validation-for="Date" class="text-danger" style="font-size: 0.9rem;"></span>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <a asp-action="Index" 
+                   style="padding: 1.2rem 2rem; font-size: 1.1rem; font-weight: 600; border: 3px solid #6c757d; border-radius: 15px; background: white; color: #6c757d; text-decoration: none; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"
+                   onmouseover="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(108,117,125,0.3)';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#6c757d'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>Cancel
+                </a>
+                <button type="submit" 
+                        style="padding: 1.2rem 2rem; font-size: 1.1rem; font-weight: 700; border: none; border-radius: 15px; background: linear-gradient(135deg, #007bff, #0056b3); color: white; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;"
+                        onmouseover="this.style.background='linear-gradient(135deg, #0056b3, #004085)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,123,255,0.4)';"
+                        onmouseout="this.style.background='linear-gradient(135deg, #007bff, #0056b3)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    <i class="fas fa-check" style="margin-right: 8px;"></i>Add Expense
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Help Text -->
+    <div style="text-align: center; margin-top: 2rem;">
+        <small style="color: #6c757d; font-size: 1rem;">
+            <i class="fas fa-info-circle" style="margin-right: 5px;"></i>
+            All fields are required to track your expense accurately
+        </small>
+    </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

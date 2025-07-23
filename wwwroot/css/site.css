@@ -29,3 +29,240 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Modern Create Page Styles - Priority Rules */
+.expense-icon-circle {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #258cfb, #1d7ce8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(37, 140, 251, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(37, 140, 251, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 140, 251, 0.4);
+  }
+}
+
+.rounded-4 {
+  border-radius: 1.5rem !important;
+}
+
+/* Create page specific form styling */
+.container .card {
+  border: none !important;
+  border-radius: 1.5rem !important;
+  transition: all 0.3s ease;
+}
+
+.container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.container .form-control-lg, 
+.container .form-select-lg {
+  padding: 1rem 1.25rem !important;
+  font-size: 1.125rem !important;
+  border-width: 2px !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease;
+}
+
+.container .form-control:focus, 
+.container .form-select:focus {
+  border-color: #258cfb !important;
+  box-shadow: 0 0 0 0.25rem rgba(37, 140, 251, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.container .input-group-text {
+  border-width: 2px !important;
+  font-size: 1.125rem !important;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+  border-radius: 0.75rem 0 0 0.75rem !important;
+}
+
+.container .btn-lg {
+  padding: 1rem 2rem !important;
+  font-size: 1.125rem !important;
+  border-width: 2px !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease;
+}
+
+.container .btn-primary {
+  background: linear-gradient(135deg, #258cfb, #1d7ce8) !important;
+  border-color: #258cfb !important;
+  box-shadow: 0 4px 15px rgba(37, 140, 251, 0.3) !important;
+}
+
+.container .btn-primary:hover {
+  background: linear-gradient(135deg, #1d7ce8, #1668d1) !important;
+  border-color: #1d7ce8 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(37, 140, 251, 0.4) !important;
+}
+
+.container .btn-outline-secondary {
+  border-width: 2px !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease;
+}
+
+.container .btn-outline-secondary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.2) !important;
+}
+
+.container .form-label {
+  font-size: 1rem !important;
+  margin-bottom: 0.75rem !important;
+  font-weight: 600 !important;
+}
+
+.display-6 {
+  color: #2c3e50 !important;
+  font-weight: bold !important;
+}
+
+.lead {
+  font-size: 1.125rem !important;
+}
+
+/* Icon colors */
+.text-primary { color: #258cfb !important; }
+.text-success { color: #28a745 !important; }
+.text-info { color: #17a2b8 !important; }
+.text-warning { color: #ffc107 !important; }
+
+/* Responsive improvements for Create Page */
+@media (max-width: 768px) {
+  .expense-icon-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .expense-icon-circle i {
+    font-size: 1.5rem !important;
+  }
+  
+  .display-6 {
+    font-size: 2rem;
+  }
+  
+  .container .card-body {
+    padding: 2rem 1rem !important;
+  }
+  
+  .container .btn-lg {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Expenses Index Page Styles */
+.stats-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(45deg, #258cfb, #1d7ce8) !important;
+}
+
+.bg-gradient-success {
+  background: linear-gradient(45deg, #28a745, #20c997) !important;
+}
+
+.bg-gradient-info {
+  background: linear-gradient(45deg, #17a2b8, #6f42c1) !important;
+}
+
+.expense-row {
+  transition: background-color 0.2s ease;
+}
+
+.expense-row:hover {
+  background-color: #f8f9fa;
+}
+
+.category-badge {
+  border-radius: 20px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid #e9ecef;
+}
+
+.table th {
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.chart-container canvas {
+  max-height: 300px;
+}
+
+.btn-outline-danger:hover {
+  transform: scale(1.05);
+}
+
+/* Empty state styling */
+.text-center .fa-receipt,
+.text-center .fa-chart-pie {
+  opacity: 0.5;
+}
+
+/* Card improvements */
+.card-header {
+  background-color: #fff !important;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.25rem 1.5rem;
+}
+
+.card-header h5 {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .table-responsive {
+    border-radius: 0;
+  }
+  
+  .stats-card {
+    margin-bottom: 1rem;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+}
