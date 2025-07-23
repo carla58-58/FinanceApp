@@ -85,6 +85,18 @@ The app includes:
 - ✅ **render.yaml** for automatic Render deployment
 - ✅ **SQLite database** (no additional database costs)
 - ✅ **Production configuration** ready
+- ✅ **Persistent disk** configured to retain data across deployments
+
+### 💾 Data Persistence on Render
+
+The app uses Render's **persistent disk** feature to ensure your expense data survives container restarts:
+
+- **Persistent Disk**: Mounted at `/app/data` with 1GB storage
+- **Database Location**: `/app/data/financeApp.db` (survives restarts)
+- **Sample Data**: Automatically added when database is first created
+- **Free Tier Compatible**: Works with Render's free plan limitations
+
+**Note**: On first deployment, the app will create sample expenses to verify that data persistence is working correctly. You can delete these and add your own expenses.
 
 ---
 
